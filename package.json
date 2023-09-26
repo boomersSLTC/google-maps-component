@@ -1,8 +1,20 @@
 {
-  "name": "editor-js-implementation",
-  "version": "0.1.0",
-  "private": true,
+  "name": "google-locator-sandive",
+  "description": "This is a simple library for integrating Google Maps into your web application. It provides a location search bar and real-time map updates.",
+  "author": "Sandive",
+  "keywords": ["react", "component", "google map", "ui"],
+  "version": "0.1.2",
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": ["dist", "README.md"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boomersSLTC/google-maps-component.git"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@googlemaps/js-api-loader": "^1.16.2",
     "@react-google-maps/api": "^2.19.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,12 +22,11 @@
     "google-map-react": "^2.1.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npx babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20"
   }
 }

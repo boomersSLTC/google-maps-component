@@ -1,10 +1,10 @@
 import React from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
-import { REACT_APP_GOOGLE_MAPS_KEY } from "../constants/constants";
 
-const MapComponent = ({ selectedLocation }) => {
+
+const MapComponent = ({ selectedLocation, google_Api }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: REACT_APP_GOOGLE_MAPS_KEY,
+    googleMapsApiKey: google_Api,
   });
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
@@ -14,7 +14,7 @@ const MapComponent = ({ selectedLocation }) => {
   if (!isLoaded) return "Maps";
 
   return (
-    <div style={{ marginTop: "50px" }}>
+    <div style={{ marginTop: "20px" }}>
       <GoogleMap
         mapContainerStyle={{
           height: "800px",
@@ -25,7 +25,7 @@ const MapComponent = ({ selectedLocation }) => {
       >
         <MarkerF
           position={selectedLocation}
-          icon={"http://maps.google.com/mapfiles/ms/icons/green-dot.png"}
+          icon={"http://maps.google.com/mapfiles/ms/icons/red-dot.png"}
         />
       </GoogleMap>
     </div>

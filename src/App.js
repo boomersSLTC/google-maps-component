@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import "./App.css";
-import SearchLocationInput from "./components/GooglePlcasesApi";
-import MapComponent from "./components/Map";
-
+import React from "react";
+import {Location} from "./lib/index";
+const google_Api = 'AIzaSyCPibLEX-xq6_6FPjuFKSHHZ8GfN5bVf5w';
 function App() {
-  const [selectedLocation, setSelectedLocation] = useState({
-    lat: 28.7041,
-    lng: 77.1025,
-  });
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
-      <SearchLocationInput setSelectedLocation={setSelectedLocation} />
-      <MapComponent selectedLocation={selectedLocation} />
+    <div>
+      <Location google_Api={google_Api}/>
     </div>
   );
 }
